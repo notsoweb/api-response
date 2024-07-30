@@ -1,0 +1,21 @@
+{
+    "name": "notsoweb/api-response",
+    "description": "Respuesta para APIs con el estándar Jsend para PHP",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Notsoweb\\ApiResponse\\": "src"
+        }
+    },
+    "authors": [
+        {
+            "name": "Moisés Cortés C.",
+            "email": "moises.cortes@notsoweb.com"
+        }
+    ],
+    "require": {
+        "mongodb/laravel-mongodb": "^4.7",
+        "illuminate/session":"^11.19"
+    }
+}
