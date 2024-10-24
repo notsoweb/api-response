@@ -220,4 +220,12 @@ enum ApiResponse : int
 
         return $this->onError($data);
     }
+
+    /**
+     * Respuesta para axios
+     */
+    public function axios(array $data = [])
+    {
+        return response()->json(data: $data, status: $this->value);
+    }
 }
