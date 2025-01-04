@@ -98,16 +98,21 @@ enum ApiResponse : int
      * Se ha producido un error interno en el servidor.
      */
     case INTERNAL_ERROR = 500;
+
+    /**
+     * Servicio no disponible
+     */
+    case SERVICE_UNAVAILABLE = 503;
     
     /**
-     * Estado de éxito
+     * Respuesta exitosa
      * 
      * Todo va bien y (normalmente) se devuelve algún datos.
      */
     const SUCCESS = 'success';
 
     /**
-     * Estado de éxito
+     * Respuesta de falla
      * 
      * Ha habido un problema con los datos enviados o no se ha cumplido alguna condición
      * previa de la llamada a la API.
@@ -115,7 +120,7 @@ enum ApiResponse : int
     const FAIL = 'fail';
 
     /**
-     * Estado de éxito
+     * Respuesta de error
      * 
      * Se ha producido un error al procesar la solicitud, es decir, se ha lanzado una excepción.
      */
@@ -140,6 +145,7 @@ enum ApiResponse : int
             self::UNSUPPORTED_MEDIA_TYPE => 'Formato de respuesta solicitado invalido.',
             self::UNPROCESSABLE_CONTENT => 'Contenido no procesable.',
             self::INTERNAL_ERROR => 'Error interno.',
+            self::SERVICE_UNAVAILABLE => 'Servicio no disponible.',
         };
     }
 
@@ -162,6 +168,7 @@ enum ApiResponse : int
             self::UNSUPPORTED_MEDIA_TYPE => self::FAIL,
             self::UNPROCESSABLE_CONTENT => self::ERROR,
             self::INTERNAL_ERROR => self::ERROR,
+            self::SERVICE_UNAVAILABLE => self::ERROR,
         };
     }
 
